@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #fdfdfd;
+      background-color: #f5f1eb; /* پس‌زمینه هماهنگ با لوگو */
       color: #333;
       transition: all 0.3s ease;
     }
@@ -240,6 +240,38 @@
         contactText: "Adoraríamos ouvir você! Entre em contato por e-mail ou WhatsApp:",
         emailBtn: "Envie-nos um email",
         waBtn: "WhatsApp"
+      },
+      ga: {
+        subtitle: "Táirgí barántúla na hIaráine don Eoraip",
+        navProducts: "Táirgí",
+        navContact: "Teagmháil",
+        productsTitle: "🛍️ Ár dtáirgí",
+        p1Title: "🌸 Saffron ó Khorasan",
+        p1Desc: "Snáitheanna saffron préimhe a bhaintear de láimh ó mháithreacha Khorasan, ar a dtugtar a mboladh saibhir agus a ndath bríomhar.",
+        p2Title: "🍯 Mil nádúrtha ó Malayer",
+        p2Desc: "Mil amh agus íon ó thírdhreacha pristine Malayer, ag tairiscint blas gan sárú agus buntáistí sláinte.",
+        p3Title: "🍯 Glóthach Ríoga ó Malayer",
+        p3Desc: "Glóthach ríoga úr, íon ó Malayer, lán de chothaithigh le haghaidh fuinnimh agus folláine.",
+        contactTitle: "📬 Déan teagmháil linn",
+        contactText: "Ba bhreá linn cloisteáil uait! Déan teagmháil linn trí ríomhphost nó WhatsApp:",
+        emailBtn: "Seol Ríomhphost",
+        waBtn: "WhatsApp"
+      },
+      da: {
+        subtitle: "Autentiske iranske produkter til Europa",
+        navProducts: "Produkter",
+        navContact: "Kontakt",
+        productsTitle: "🛍️ Vores produkter",
+        p1Title: "🌸 Safran fra Khorasan",
+        p1Desc: "Førsteklasses safrantråde håndhøstet fra markerne i Khorasan, kendt for deres rige aroma og levende farve.",
+        p2Title: "🍯 Naturlig honning fra Malayer",
+        p2Desc: "Ren, rå honning hentet fra de uberørte landskaber i Malayer, der giver uovertruffen smag og sundhedsfordele.",
+        p3Title: "🍯 Bidronningegelé fra Malayer",
+        p3Desc: "Frisk, ren bidronningegelé fra Malayer, fyldt med næringsstoffer til energi og vitalitet.",
+        contactTitle: "📬 Kontakt os",
+        contactText: "Vi vil meget gerne høre fra dig! Kontakt os via e-mail eller WhatsApp:",
+        emailBtn: "Send e-mail",
+        waBtn: "WhatsApp"
       }
     };
 
@@ -248,7 +280,8 @@
       const t = translations[lang];
       document.body.setAttribute("lang", lang);
 
-      if (lang === "fa") {
+      // فارسی، ایرلندی و دانمارکی → RTL
+      if (lang === "fa" || lang === "ga" || lang === "da") {
         document.body.setAttribute("dir", "rtl");
       } else {
         document.body.removeAttribute("dir");
