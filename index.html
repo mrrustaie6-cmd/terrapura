@@ -1,43 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TerraPura</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TerraPura | Authentic Iranian Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
     }
     header {
-      background-color: #f5f5f5;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      padding: 60px 20px 30px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header img {
+      max-width: 260px;
+      height: auto;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      margin-top: 20px;
+      color: #008080;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    nav {
+      background-color: #008080;
+      padding: 10px 0;
+      text-align: center;
     }
     nav a {
-      margin-left: 15px;
+      color: #fff;
       text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section.about, section.products, section.contact {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section.about {
+      background-color: #f0fdfa;
+    }
+    section.about h2 {
+      font-size: 1.8rem;
+      color: #006666;
+      margin-bottom: 15px;
+    }
+
+    section.products {
+      background-color: #ffffff;
+    }
+    section.products h2 {
+      font-size: 1.8rem;
+      color: #008080;
+      margin-bottom: 15px;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .product-card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .product-card h3 {
+      margin-top: 10px;
+      font-size: 1.2rem;
       color: #333;
-      font-weight: bold;
+    }
+    .product-card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    section.contact {
+      background: linear-gradient(135deg, #e6f7f5, #f0fdfa);
+    }
+    section.contact h2 {
+      font-size: 1.8rem;
+      color: #006666;
+      margin-bottom: 20px;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .contact-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      background-color: #008080;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .contact-buttons a:hover {
+      background-color: #006666;
+    }
+    .contact-buttons img {
+      width: 20px;
+      height: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background-color: #f5f5f5;
+      color: #777;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <img src="logo.jpg" alt="TerraPura Logo" style="height: 70px;">
-    <nav>
-      <a href="#">خانه</a>
-      <a href="#">درباره ما</a>
-      <a href="#">تماس با ما</a>
-    </nav>
+    <img src="logo.png" alt="TerraPura Logo" />
+    <h1>TerraPura</h1>
+    <p>Authentic Iranian Products for Europe</p>
   </header>
 
-  <main style="padding: 20px;">
-    <h1>به TerraPura خوش آمدید</h1>
-    <p>اینجا می‌تونید درباره‌ی محصولات ارگانیک و خدمات ما بیشتر بدونید.</p>
-  </main>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>🌱 About TerraPura</h2>
+    <p>TerraPura is a cultural bridge—bringing the richness of Iranian heritage to European homes through ethically sourced, authentic products. From saffron to handmade crafts, we celebrate purity, tradition, and connection.</p>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <h2>🛍️ Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <h3>Premium Saffron</h3>
+        <p>Hand-harvested from Khorasan, our saffron is vibrant, aromatic, and 100% pure.</p>
+      </div>
+      <div class="product-card">
+        <h3>Handmade Ceramics</h3>
+        <p>Traditional Persian designs crafted by local artisans in Isfahan.</p>
+      </div>
+      <div class="product-card">
+        <h3>Organic Rosewater</h3>
+        <p>Distilled in Kashan using centuries-old techniques for culinary and cosmetic use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>📬 Contact Us</h2>
+    <p>We’d love to hear from you! Reach out via email or WhatsApp:</p>
+    <div class="contact-buttons">
+      <a href="mailto:Mrrustaie6@gmail.com">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email Icon" />
+        Email Us
+      </a>
+      <a href="https://wa.me/989120159445" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon" />
+        WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 TerraPura. All rights reserved.
+  </footer>
+
 </body>
 </html>
-
