@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TerraPura | Authentic Iranian Products</title>
+  <meta name="description" content="TerraPura - Authentic Iranian products such as saffron, honey, and royal jelly directly from Iran to Europe.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -11,27 +12,27 @@
       font-family: 'Inter', sans-serif;
       background-color: #fdfdfd;
       color: #333;
+      transition: all 0.3s ease;
     }
     header {
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 40px 20px 20px;
       background-color: #ffffff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     header img {
-      max-width: 260px;
+      max-width: 180px;
       height: auto;
     }
     header h1 {
-      font-size: 2.4rem;
-      margin-top: 20px;
+      font-size: 2.2rem;
+      margin-top: 15px;
       color: #008080;
     }
     header p {
       font-size: 1.1rem;
       color: #666;
     }
-
     nav {
       background-color: #008080;
       padding: 10px 0;
@@ -46,28 +47,18 @@
     nav a:hover {
       text-decoration: underline;
     }
-
-    section.about, section.products, section.contact {
-      padding: 60px 20px;
+    .lang-switch {
+      text-align: center;
+      margin: 20px;
+    }
+    section {
+      padding: 40px 20px;
       text-align: center;
     }
-
-    section.about {
-      background-color: #f0fdfa;
-    }
-    section.about h2 {
+    section h2 {
       font-size: 1.8rem;
+      margin-bottom: 15px;
       color: #006666;
-      margin-bottom: 15px;
-    }
-
-    section.products {
-      background-color: #ffffff;
-    }
-    section.products h2 {
-      font-size: 1.8rem;
-      color: #008080;
-      margin-bottom: 15px;
     }
     .product-grid {
       display: flex;
@@ -82,6 +73,11 @@
       padding: 20px;
       width: 250px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .product-card h3 {
       margin-top: 10px;
@@ -91,15 +87,6 @@
     .product-card p {
       font-size: 0.95rem;
       color: #666;
-    }
-
-    section.contact {
-      background: linear-gradient(135deg, #e6f7f5, #f0fdfa);
-    }
-    section.contact h2 {
-      font-size: 1.8rem;
-      color: #006666;
-      margin-bottom: 20px;
     }
     .contact-buttons {
       display: flex;
@@ -127,7 +114,6 @@
       width: 20px;
       height: 20px;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -137,59 +123,64 @@
     }
   </style>
 </head>
-<body>
+<body lang="en">
 
   <!-- Header -->
   <header>
     <img src="logo.png" alt="TerraPura Logo" />
     <h1>TerraPura</h1>
-    <p>Authentic Iranian Products for Europe</p>
+    <p id="subtitle">Authentic Iranian Products for Europe</p>
   </header>
 
   <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
+  <nav aria-label="Main Navigation">
+    <a href="#products" id="nav-products">Products</a>
+    <a href="#contact" id="nav-contact">Contact</a>
   </nav>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <h2>🌱 About TerraPura</h2>
-    <p>TerraPura is a cultural bridge—bringing the richness of Iranian heritage to European homes through ethically sourced, authentic products. From saffron to handmade crafts, we celebrate purity, tradition, and connection.</p>
-  </section>
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    🌐 <label for="language">Language:</label>
+    <select id="language" onchange="changeLanguage()">
+      <option value="en" selected>English</option>
+      <option value="fa">فارسی</option>
+      <option value="pt">Português</option>
+      <option value="ga">Gaeilge</option>
+      <option value="da">Dansk</option>
+    </select>
+  </div>
 
   <!-- Products Section -->
-  <section class="products" id="products">
-    <h2>🛍️ Featured Products</h2>
+  <section id="products">
+    <h2 id="products-title">🛍️ Our Products</h2>
     <div class="product-grid">
       <div class="product-card">
-        <h3>Premium Saffron</h3>
-        <p>Hand-harvested from Khorasan, our saffron is vibrant, aromatic, and 100% pure.</p>
+        <h3 id="p1-title">🌸 Saffron from Khorasan</h3>
+        <p id="p1-desc">Premium saffron threads hand-harvested from the fields of Khorasan, known for their rich aroma and vibrant color.</p>
       </div>
       <div class="product-card">
-        <h3>Handmade Ceramics</h3>
-        <p>Traditional Persian designs crafted by local artisans in Isfahan.</p>
+        <h3 id="p2-title">🍯 Natural Honey from Malayer</h3>
+        <p id="p2-desc">Pure, raw honey sourced from the pristine landscapes of Malayer, offering unmatched taste and health benefits.</p>
       </div>
       <div class="product-card">
-        <h3>Organic Rosewater</h3>
-        <p>Distilled in Kashan using centuries-old techniques for culinary and cosmetic use.</p>
+        <h3 id="p3-title">🍯 Royal Jelly from Malayer</h3>
+        <p id="p3-desc">Fresh, pure royal jelly from Malayer, packed with nutrients to boost energy, skin health, and overall vitality.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <h2>📬 Contact Us</h2>
-    <p>We’d love to hear from you! Reach out via email or WhatsApp:</p>
+  <section id="contact" style="background: linear-gradient(135deg, #e6f7f5, #f0fdfa);">
+    <h2 id="contact-title">📬 Contact Us</h2>
+    <p id="contact-text">We’d love to hear from you! Reach out via email or WhatsApp:</p>
     <div class="contact-buttons">
       <a href="mailto:Mrrustaie6@gmail.com">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email Icon" />
-        Email Us
+        <span id="email-btn">Email Us</span>
       </a>
       <a href="https://wa.me/989120159445" target="_blank">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon" />
-        WhatsApp
+        <span id="wa-btn">WhatsApp</span>
       </a>
     </div>
   </section>
@@ -199,5 +190,85 @@
     &copy; 2025 TerraPura. All rights reserved.
   </footer>
 
+  <!-- Language Script -->
+  <script>
+    const translations = {
+      en: {
+        subtitle: "Authentic Iranian Products for Europe",
+        navProducts: "Products",
+        navContact: "Contact",
+        productsTitle: "🛍️ Our Products",
+        p1Title: "🌸 Saffron from Khorasan",
+        p1Desc: "Premium saffron threads hand-harvested from the fields of Khorasan, known for their rich aroma and vibrant color.",
+        p2Title: "🍯 Natural Honey from Malayer",
+        p2Desc: "Pure, raw honey sourced from the pristine landscapes of Malayer, offering unmatched taste and health benefits.",
+        p3Title: "🍯 Royal Jelly from Malayer",
+        p3Desc: "Fresh, pure royal jelly from Malayer, packed with nutrients to boost energy, skin health, and overall vitality.",
+        contactTitle: "📬 Contact Us",
+        contactText: "We’d love to hear from you! Reach out via email or WhatsApp:",
+        emailBtn: "Email Us",
+        waBtn: "WhatsApp"
+      },
+      fa: {
+        subtitle: "محصولات اصیل ایرانی برای اروپا",
+        navProducts: "محصولات",
+        navContact: "تماس",
+        productsTitle: "🛍️ محصولات ما",
+        p1Title: "🌸 زعفران خراسان",
+        p1Desc: "زعفران سرگل ممتاز برداشت‌شده از مزارع خراسان با عطر و رنگ بی‌نظیر.",
+        p2Title: "🍯 عسل طبیعی ملایر",
+        p2Desc: "عسل خام و خالص از طبیعت بکر ملایر با طعمی بی‌نظیر و خواص درمانی.",
+        p3Title: "🍯 ژل رویال ملایر",
+        p3Desc: "ژل رویال تازه و خالص از ملایر، سرشار از مواد مغذی برای انرژی و سلامت.",
+        contactTitle: "📬 تماس با ما",
+        contactText: "برای سفارش یا اطلاعات بیشتر از طریق ایمیل یا واتساپ با ما در ارتباط باشید:",
+        emailBtn: "ارسال ایمیل",
+        waBtn: "واتساپ"
+      },
+      pt: {
+        subtitle: "Produtos iranianos autênticos para a Europa",
+        navProducts: "Produtos",
+        navContact: "Contato",
+        productsTitle: "🛍️ Nossos Produtos",
+        p1Title: "🌸 Açafrão de Khorasan",
+        p1Desc: "Fios de açafrão premium colhidos à mão dos campos de Khorasan, conhecidos por seu aroma rico e cor vibrante.",
+        p2Title: "🍯 Mel natural de Malayer",
+        p2Desc: "Mel puro e cru, proveniente das paisagens intocadas de Malayer, oferecendo sabor incomparável e benefícios à saúde.",
+        p3Title: "🍯 Geleia Real de Malayer",
+        p3Desc: "Geleia real fresca e pura de Malayer, repleta de nutrientes para energia e vitalidade.",
+        contactTitle: "📬 Contate-nos",
+        contactText: "Adoraríamos ouvir você! Entre em contato por e-mail ou WhatsApp:",
+        emailBtn: "Envie-nos um email",
+        waBtn: "WhatsApp"
+      }
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById("language").value;
+      const t = translations[lang];
+      document.body.setAttribute("lang", lang);
+
+      if (lang === "fa") {
+        document.body.setAttribute("dir", "rtl");
+      } else {
+        document.body.removeAttribute("dir");
+      }
+
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("nav-products").textContent = t.navProducts;
+      document.getElementById("nav-contact").textContent = t.navContact;
+      document.getElementById("products-title").textContent = t.productsTitle;
+      document.getElementById("p1-title").textContent = t.p1Title;
+      document.getElementById("p1-desc").textContent = t.p1Desc;
+      document.getElementById("p2-title").textContent = t.p2Title;
+      document.getElementById("p2-desc").textContent = t.p2Desc;
+      document.getElementById("p3-title").textContent = t.p3Title;
+      document.getElementById("p3-desc").textContent = t.p3Desc;
+      document.getElementById("contact-title").textContent = t.contactTitle;
+      document.getElementById("contact-text").textContent = t.contactText;
+      document.getElementById("email-btn").textContent = t.emailBtn;
+      document.getElementById("wa-btn").textContent = t.waBtn;
+    }
+  </script>
 </body>
 </html>
